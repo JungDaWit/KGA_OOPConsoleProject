@@ -11,11 +11,7 @@ namespace ConsoleApp1
         private static Dictionary<string, Room> roomDic;
         private static Room nextRoom;
 
-        public static void SetNextRoom(string roomName)
-        {
-            if (roomDic.ContainsKey(roomName))
-                nextRoom = roomDic[roomName];
-        }
+        
 
         private static bool gameOver;
 
@@ -25,7 +21,7 @@ namespace ConsoleApp1
 
             roomDic = new Dictionary<string, Room>();
             roomDic.Add("Title", new Title());
-            roomDic.Add("MazeRoom1", new MazeRoom1());
+           
 
 
             nextRoom = roomDic["Title"];
@@ -37,7 +33,7 @@ namespace ConsoleApp1
         public static void Rnu()
         {
             Start();
-            while (gameOver)
+            while (gameOver == false)
             {
                 nextRoom.Render();
                 nextRoom.Input();

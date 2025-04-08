@@ -8,8 +8,13 @@ namespace ConsoleApp1
 {
     public abstract class Room
     {
+        
+        protected ConsoleKey input;
         public abstract void Render();
-        public abstract void Input();
+        public void Input()
+        {
+            input = Console.ReadKey(true).Key;
+        }
         public abstract void Update();
         public abstract void Result();
     }
