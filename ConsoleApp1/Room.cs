@@ -17,5 +17,7 @@ namespace ConsoleApp1
         }
         public abstract void Update();
         public abstract void Result();
+        public abstract void Wait();
+        public abstract void Next();
     }
 }

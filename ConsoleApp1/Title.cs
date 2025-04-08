@@ -9,15 +9,23 @@ namespace ConsoleApp1
     public class Title : Room
     {
 
-        
-        public  void Input()
+        public override void Next()
         {
-           
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    Game.Load("MazeRoom");
+                    break;
+                case ConsoleKey.D2:
+                    Environment.Exit(0);
+                    break;
+
+            }
         }
 
         public override void Render()
         {
-           // Console.Clear();
+            Console.Clear();
 
             Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
             Console.WriteLine("ㅁ         길 찾기 게임             ㅁ");
@@ -36,6 +44,11 @@ namespace ConsoleApp1
         public override void Update()
         {
            
+        }
+
+        public override void Wait()
+        {
+            
         }
     }
 }

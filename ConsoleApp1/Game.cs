@@ -11,6 +11,11 @@ namespace ConsoleApp1
         private static Dictionary<string, Room> roomDic;
         private static Room nextRoom;
 
+        public static void Load(string loadName)
+        {
+            nextRoom = roomDic[loadName];
+        }
+
         
 
         private static bool gameOver;
@@ -21,6 +26,7 @@ namespace ConsoleApp1
 
             roomDic = new Dictionary<string, Room>();
             roomDic.Add("Title", new Title());
+            roomDic.Add("MazeRoom", new MazeRoom());
            
 
 
@@ -43,4 +49,5 @@ namespace ConsoleApp1
             End();
         }
     }
+
 }
