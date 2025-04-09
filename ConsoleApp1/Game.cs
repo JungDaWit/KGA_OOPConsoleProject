@@ -10,6 +10,8 @@ namespace ConsoleApp1
     {
         private static Dictionary<string, Room> roomDic;
         private static Room nextRoom;
+        private static Player player;
+        public static Player Player { get { return player; } }
 
         public static void Load(string loadName)
         {
@@ -25,6 +27,23 @@ namespace ConsoleApp1
             Console.WriteLine(reason);
 
             gameOver = true;
+        }
+        public static void playerInfo()
+        {
+            Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
+            Console.WriteLine("ㅁ                당신의 현재 상태                ㅁ");
+            Console.WriteLine("ㅁ   체력 : {0},   힘 : {1},   지능 : {2},   속도 : {3}  ㅁ",player.Hp,player.Power,player.Intellect,player.Speed);
+            Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
+        }
+        public static void Clear(string reason)
+        {
+            Console.Clear();
+            Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
+            Console.WriteLine("ㅁ       미로를 탈출했습니다!      ㅁ");
+            Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
+            Console.WriteLine();
+            Console.WriteLine("아무키 입력시 게임 타이틀로 이동 합니다.");
+            //Console.ReadLine(Game.Load("Title"));
         }
 
         
@@ -46,6 +65,13 @@ namespace ConsoleApp1
             roomDic.Add("PuzzleTrap", new PuzzleTrapRoom());
 
 
+            player = new Player();
+            player.Hp = 10;
+            player.Power = 5;
+            player.Intellect = 5;
+            player.Speed = 10;
+
+
 
 
 
@@ -60,6 +86,7 @@ namespace ConsoleApp1
             Start();
             while (gameOver == false)
             {
+              
                 nextRoom.Render();
                 Console.WriteLine();
                 nextRoom.Choice();

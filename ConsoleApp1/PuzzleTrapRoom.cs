@@ -15,6 +15,7 @@ namespace ConsoleApp1
 
         public override void Next()
         {
+          
             Game.Load("MazeRoom1");
         }
 

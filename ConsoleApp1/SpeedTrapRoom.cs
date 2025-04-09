@@ -27,6 +27,7 @@ namespace ConsoleApp1
                     break;
                 case ConsoleKey.D3:
                     Console.WriteLine("당신은 벽이 더 좁아지기 전에 되돌아 갔지만 벽에 부딪혀 {0}데미지를 입었다.");
+                    Game.Load("MazeRoom");
                     break;
 
             }
@@ -46,8 +47,18 @@ namespace ConsoleApp1
         {
             switch (input)
             {
+                
                 case ConsoleKey.D1:
                     Console.WriteLine("앞만 보고 전력질주했다.");
+                    if (Game.Player.Speed >= 8)
+                    {
+                        Console.WriteLine("당신은 벽이 좁아지는 속도보다 빠르게 달려 다음방으로 진입했다.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("당신은 미처 벽에서 탈출하지 못하였다.");
+                        Game.GameOver("당신은 벽사이에서 곤죽이 되었다...");
+                    }
                     break;
                 case ConsoleKey.D2:
                     Console.WriteLine("함정이 발동되자 당신은 다리에 힘이 풀려버렸다.");
@@ -70,7 +81,7 @@ namespace ConsoleApp1
             switch (input)
             {
                 case ConsoleKey.D1:
-                    Console.WriteLine("당신은 벽이 좁아지는 속도보다 빠르게 달려 다음방으로 진입했다.");
+                    Console.WriteLine("계속...");
                     Console.ReadKey();
                     break;
                 case ConsoleKey.D2:

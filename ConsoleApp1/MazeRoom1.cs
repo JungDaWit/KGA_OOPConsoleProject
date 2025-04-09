@@ -21,6 +21,9 @@ namespace ConsoleApp1
             switch (input)
             {
                 case ConsoleKey.D1:
+                    Game.Load("ClosedRoom");
+                    break;
+                case ConsoleKey.D3:
                     Random rand = new Random();
                     int randomNumber = rand.Next(0);
                     if (randomNumber == 0)
@@ -48,7 +51,7 @@ namespace ConsoleApp1
             Console.WriteLine("당신은 처음과 비슷해 보이는 방으로 왔다.");
             Console.WriteLine("당신 앞에 세 갈레 길이 있다... 어디로 갈까?");
             Console.WriteLine();
-
+            Game.playerInfo();
 
         }
 

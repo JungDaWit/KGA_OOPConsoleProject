@@ -54,7 +54,7 @@ namespace ConsoleApp1
             Console.WriteLine("하지만 당신이 누군지, 왜 여기 있는지 기억이 나지 않는다...");
             Console.WriteLine("당신 앞에 세 갈레 길이 있다... 어디로 갈까?");
             Console.WriteLine();
-
+            Game.playerInfo();
            
         }
 
