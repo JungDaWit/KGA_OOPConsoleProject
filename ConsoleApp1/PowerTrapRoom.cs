@@ -15,7 +15,7 @@ namespace ConsoleApp1
 
         public override void Next()
         {
-            
+            Game.Load("MazeRoom1");
         }
 
         public override void Render()
@@ -28,6 +28,9 @@ namespace ConsoleApp1
 
         public override void Result()
         {
+            Console.WriteLine("당신은 밧줄을 발견하고 재빠르게 붙잡고 올라가 다음 방으로 이동했다.");
+            Console.WriteLine("당신은 밧줄을 발견하고 재빠르게 붙잡고 올라갔지만 힘이 부족해 {0}데미지를 입었다.");
+            Console.WriteLine("당신은 밧줄을 발견하고 재빠르게 붙잡았지만 힘이 부족해 놓쳐 떨어지고 말았다...");
            
         }
 

@@ -36,25 +36,26 @@ namespace ConsoleApp1
                     Console.WriteLine("당신은 상자를 열어보았다");
                     Random rand = new Random();
                     int randNumber = rand.Next(8);
+                    int randNumber2 = rand.Next(5);
                     if (randNumber == 0)
                     {
-                        Console.WriteLine("상자 안에는 체력 포션을 흭득했다! 체력 {0} 업!");
+                        Console.WriteLine("상자 안에는 체력 포션을 흭득했다! 체력 {0} 업!",randNumber2);
                     }
                     else if (randNumber == 1)
                     {
-                        Console.WriteLine("상자 안에는 힘 포션을 흭득했다! 힘 {0} 업!");
+                        Console.WriteLine("상자 안에는 힘 포션을 흭득했다! 힘 {0} 업!", randNumber2);
                     }
                     else if (randNumber == 2)
                     {
-                        Console.WriteLine("상자 안에는 지력 포션을 흭득했다! 지력 {0} 업!");
+                        Console.WriteLine("상자 안에는 지력 포션을 흭득했다! 지력 {0} 업!", randNumber2);
                     }
                     else if (randNumber == 3)
                     {
-                        Console.WriteLine("상자 안에는 속도 포션을 흭득했다! 속도 {0} 업!");
+                        Console.WriteLine("상자 안에는 속도 포션을 흭득했다! 속도 {0} 업!", randNumber2);
                     }
                     else
                     {
-                        Console.WriteLine("상자는 미믹이였다! 손을 물려 {0}데미지를 입었다...");
+                        Console.WriteLine("상자는 미믹이였다! 손을 물려 {0}데미지를 입었다...", randNumber2);
                     }
                     break;
                 case ConsoleKey.D2:
