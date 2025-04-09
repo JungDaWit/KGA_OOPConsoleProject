@@ -8,6 +8,13 @@ namespace ConsoleApp1
 {
     public class MazeRoom : Room
     {
+        public override void Choice()
+        {
+            Console.WriteLine("1. 앞으로 간다");
+            Console.WriteLine("2. 왼쪽으로 간다");
+            Console.WriteLine("3. 오른쪽으로 간다");
+        }
+
         public override void Next()
         {
             
@@ -21,9 +28,7 @@ namespace ConsoleApp1
             Console.WriteLine("당신 앞에 세 갈레 길이 있습니다. 어디로 가시겠습니까?");
             Console.WriteLine();
 
-            Console.WriteLine("1. 앞으로 간다");
-            Console.WriteLine("2. 왼쪽으로 간다");
-            Console.WriteLine("3. 오른쪽으로 간다");
+           
         }
 
         public override void Result()

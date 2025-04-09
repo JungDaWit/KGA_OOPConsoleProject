@@ -42,9 +42,11 @@ namespace ConsoleApp1
             while (gameOver == false)
             {
                 nextRoom.Render();
+                nextRoom.Choice();
                 nextRoom.Input();
                 nextRoom.Update();
                 nextRoom.Result();
+                nextRoom.Next();
             }
             End();
         }

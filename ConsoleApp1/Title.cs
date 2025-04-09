@@ -8,6 +8,11 @@ namespace ConsoleApp1
 {
     public class Title : Room
     {
+        public override void Choice()
+        {
+             Console.WriteLine("1. 게임 시작");
+            Console.WriteLine("2. 게임 종료");
+        }
 
         public override void Next()
         {
@@ -32,8 +37,7 @@ namespace ConsoleApp1
             Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
             Console.WriteLine();
 
-            Console.WriteLine("1. 게임 시작");
-            Console.WriteLine("2. 게임 종료");
+           
         }
 
         public override void Result()
