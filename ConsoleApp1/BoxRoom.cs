@@ -16,8 +16,19 @@ namespace ConsoleApp1
 
         public override void Next()
         {
-            Game.Load("MazeRoom");
-        
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    if (Game.Player.Hp <= 0)
+                    {
+                        Game.GameOver("당신은 미믹에게 뼈까지 씹혀버렸다...");
+                    }
+                    else
+                    {
+                        Game.Load("MazeRoom");
+                    }
+                    break;
+            }
         }
 
         public override void Render()

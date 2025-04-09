@@ -42,12 +42,19 @@ namespace ConsoleApp1
                     Game.GameOver("당신은 곤죽이 되었다...");
                     break;
                 case ConsoleKey.D3:
-                    Game.Load("MazeRoom");
+                    if (Game.Player.Hp <= 0)
+                    {
+                        Game.GameOver("당신은 곤죽이 되었다...");
+                    }
+                    else
+                    {
+                        Game.Load("MazeRoom");
+                    }
                     break;
 
 
 
-               
+
 
             }
         }
@@ -80,7 +87,8 @@ namespace ConsoleApp1
                     {
                         Console.WriteLine();
                         Console.WriteLine("당신은 미처 벽에서 탈출하지 못하였다.");
-                        Game.Player.Hp = 0;
+                        Console.ReadKey();
+                        Game.GameOver("당신은 곤죽이 되었다...");
                     }
                     break;
                 case ConsoleKey.D2:

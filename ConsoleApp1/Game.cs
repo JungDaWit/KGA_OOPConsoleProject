@@ -73,7 +73,7 @@ namespace ConsoleApp1
             player.Hp = 10;
             player.Power = 5;
             player.Intellect = 5;
-            player.Speed = 20;
+            player.Speed = 5;
 
 
 
@@ -90,7 +90,7 @@ namespace ConsoleApp1
             Start();
             while (gameOver == false)
             {
-              
+                
                 nextRoom.Render();
                 Console.WriteLine();
                 nextRoom.Choice();

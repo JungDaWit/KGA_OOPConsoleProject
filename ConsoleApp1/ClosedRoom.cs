@@ -43,13 +43,13 @@ namespace ConsoleApp1
                 if (randNumber1 == 0)
                 {
                     Console.WriteLine("환한 빛이 보인다!");
-                    Console.WriteLine();
+                    Console.ReadKey();
                     Game.Clear("당신은 빛을따라 쭉 달렸습니다!");
                 }
                 else
                 {
                     Console.WriteLine("당신은 다음 방으로 이동했다.");
-                    Console.WriteLine();
+                    Console.ReadKey();
                     Game.Load("MazeRoom1");
                 }
             }

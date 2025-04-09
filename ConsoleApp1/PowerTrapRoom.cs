@@ -10,12 +10,35 @@ namespace ConsoleApp1
     {
         public override void Choice()
         {
-           
+            Console.WriteLine("1. 눈앞에 밧줄이 보인다! 밧줄을 잡자!");
+            Console.WriteLine("2. 벽 틈이 보인다! 손을 넣어 잡자!");
+            Console.WriteLine("3. 아무것도 잡지 않았다...");
         }
 
         public override void Next()
         {
-            Game.Load("MazeRoom1");
+            switch (input)
+            {
+
+
+                case ConsoleKey.D1:
+                    if (Game.Player.Hp == Game.Player.Hp)
+                    {
+                        Random rand = new Random();
+                        int randNumber = rand.Next(30);
+                        if (randNumber == 0)
+                        {
+                            Game.Clear("환한 빛이 보인다..!");
+                        }
+                        else if (randNumber > 0)
+                        {
+                            Console.WriteLine("다음 방으로 진입했다.");
+                            Game.Load("MazeRoom1");
+                        }
+
+                    }
+                    break;
+            }
         }
 
         public override void Render()
@@ -28,18 +51,33 @@ namespace ConsoleApp1
 
         public override void Result()
         {
-            Random rand = new Random();
-            int randNumber = rand.Next(20);
-            if (Game.Player.Power <= randNumber)
+            switch (input)
             {
-                Console.WriteLine("당신은 밧줄을 발견하고 재빠르게 붙잡고 올라가 다음 방으로 이동했다.");
+                case ConsoleKey.D1:
+                   Random rand = new Random();
+                   int randNumber = rand.Next(20);
+                   if (Game.Player.Power <= randNumber)
+                   {
+                       Console.WriteLine("당신은 밧줄을 재빠르게 붙잡고 올라가 다음 방으로 이동했다.");
+                   }
+                   else if (Game.Player.Power > randNumber)
+                   {
+                       int randNumber2 = rand.Next(5);
+                       Console.WriteLine("당신은 밧줄을 재빠르게 붙잡고 올라갔지만 힘이 조금 부족해 {0}데미지를 입고 다음 방으로 이동했다.",randNumber2);
+                       Game.Player.Hp -= randNumber2;
+                   }
+                    break;
+                case ConsoleKey.D2:
+                    Console.WriteLine("벽 틈에 손을 넣어봤지만 손이 미끄러져 그대로 추락하고 말았다.");
+                    Game.GameOver("당신은 끝없는 어둠속으로 추락했다...");
+                    break;
+                case ConsoleKey.D3:
+                    Console.WriteLine("당신은 아무것도 잡지 않았다...");
+                    Game.GameOver("당신은 끝없는 어둠속으로 추락했다...");
+                    break;
+
             }
-            else if (Game.Player.Power > randNumber)
-            {
-                int randNumber2 = rand.Next(5);
-                Console.WriteLine("당신은 밧줄을 발견하고 재빠르게 붙잡고 올라갔지만 힘이 부족해 {0}데미지를 입었다.",randNumber2);
-                Game.Player.Hp -= randNumber2;
-            }
+           
             
            
         }
