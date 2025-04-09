@@ -8,6 +8,7 @@ namespace ConsoleApp1
 {
     public class MazeRoom : Room
     {
+       
         public override void Choice()
         {
             Console.WriteLine("1. 앞으로 간다");
@@ -17,7 +18,27 @@ namespace ConsoleApp1
 
         public override void Next()
         {
-            
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    Random rand = new Random();
+                    int randomNumber = rand.Next(2);
+                    if (randomNumber == 0)
+                    {
+                        Game.Load("SpeedTrap");
+                    }
+                    else if (randomNumber == 1)
+                    {
+                        Game.Load("PowerTrap");
+                    }
+                    else
+                        Game.Load("PuzzleTrap");
+                    break;
+                case ConsoleKey.D2:
+                    Environment.Exit(0);
+                    break;
+
+            }
         }
 
         public override void Render()
@@ -44,15 +65,12 @@ namespace ConsoleApp1
                 case ConsoleKey.D3:
                     Console.WriteLine("당신은 오른쪽 길로 이동했다.");
                     break;
-                default:
-                    Console.WriteLine("잘못 입력 하셨습니다");
-                    break;
             }
         }
 
         public override void Update()
         {
-            throw new NotImplementedException();
+           
         }
 
         public override void Wait()

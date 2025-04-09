@@ -27,7 +27,12 @@ namespace ConsoleApp1
             roomDic = new Dictionary<string, Room>();
             roomDic.Add("Title", new Title());
             roomDic.Add("MazeRoom", new MazeRoom());
-           
+            roomDic.Add("SpeedTrap", new SpeedTrapRoom());
+            roomDic.Add("PowerTrap", new PowerTrapRoom());
+            roomDic.Add("PuzzleTrap", new PuzzleTrapRoom());
+
+
+
 
 
             nextRoom = roomDic["Title"];
@@ -42,10 +47,15 @@ namespace ConsoleApp1
             while (gameOver == false)
             {
                 nextRoom.Render();
+                Console.WriteLine();
                 nextRoom.Choice();
+                Console.WriteLine();
                 nextRoom.Input();
+                Console.WriteLine();
                 nextRoom.Update();
+                Console.WriteLine();
                 nextRoom.Result();
+                Console.WriteLine();
                 nextRoom.Next();
             }
             End();
