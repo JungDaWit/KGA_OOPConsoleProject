@@ -25,8 +25,12 @@ namespace ConsoleApp1
             Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
             Console.WriteLine();
             Console.WriteLine(reason);
+            Console.WriteLine();
 
-            gameOver = true;
+            Console.WriteLine("타이틀로 돌아가려면 아무키나 누르세요");
+            Console.ReadKey();
+            Game.Load("Title");
+           
         }
         public static void playerInfo()
         {
@@ -69,7 +73,7 @@ namespace ConsoleApp1
             player.Hp = 10;
             player.Power = 5;
             player.Intellect = 5;
-            player.Speed = 10;
+            player.Speed = 20;
 
 
 
@@ -98,6 +102,7 @@ namespace ConsoleApp1
                 nextRoom.Result();
                 Console.WriteLine();
                 nextRoom.Wait();
+                Console.WriteLine();
                 nextRoom.Next();
             }
             End();

@@ -26,7 +26,7 @@ namespace ConsoleApp1
 
                 case ConsoleKey.D3:
                     Random rand = new Random();
-                    int randomNumber = rand.Next(4);
+                    int randomNumber = rand.Next(0);
                     if (randomNumber == 0)
                     {
                         Game.Load("SpeedTrap");

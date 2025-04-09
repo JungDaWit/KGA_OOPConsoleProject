@@ -28,9 +28,19 @@ namespace ConsoleApp1
 
         public override void Result()
         {
-            Console.WriteLine("당신은 밧줄을 발견하고 재빠르게 붙잡고 올라가 다음 방으로 이동했다.");
-            Console.WriteLine("당신은 밧줄을 발견하고 재빠르게 붙잡고 올라갔지만 힘이 부족해 {0}데미지를 입었다.");
-            Console.WriteLine("당신은 밧줄을 발견하고 재빠르게 붙잡았지만 힘이 부족해 놓쳐 떨어지고 말았다...");
+            Random rand = new Random();
+            int randNumber = rand.Next(20);
+            if (Game.Player.Power <= randNumber)
+            {
+                Console.WriteLine("당신은 밧줄을 발견하고 재빠르게 붙잡고 올라가 다음 방으로 이동했다.");
+            }
+            else if (Game.Player.Power > randNumber)
+            {
+                int randNumber2 = rand.Next(5);
+                Console.WriteLine("당신은 밧줄을 발견하고 재빠르게 붙잡고 올라갔지만 힘이 부족해 {0}데미지를 입었다.",randNumber2);
+                Game.Player.Hp -= randNumber2;
+            }
+            
            
         }
 
@@ -41,7 +51,8 @@ namespace ConsoleApp1
 
         public override void Wait()
         {
-            
+            Console.WriteLine("계속...");
+            Console.ReadKey();
         }
     }
 }

@@ -29,8 +29,15 @@ namespace ConsoleApp1
 
         public override void Result()
         {
-            Console.WriteLine("당신은 시간내에 퍼즐을 풀어내 다음방으로 이동했다.");
+            Random rand = new Random();
+            int randNumber = rand.Next(20);
+            if (randNumber <= Game.Player.Intellect)
+            {
+                Console.WriteLine("당신은 시간내에 퍼즐을 풀어내 다음방으로 이동했다.");
+            }
+            else
             Console.WriteLine("당신은 시간내에 퍼즐을 풀어내지 못하고 방에서 수많은 가시가 튀어 나와 당신을 찔렀다...");
+            Game.Player.Hp = 0;
         }
 
         public override void Update()
@@ -40,7 +47,8 @@ namespace ConsoleApp1
 
         public override void Wait()
         {
-            
+            Console.WriteLine("계속...");
+            Console.ReadKey();
         }
     }
 }

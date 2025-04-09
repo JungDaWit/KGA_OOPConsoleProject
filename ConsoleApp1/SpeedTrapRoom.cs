@@ -19,16 +19,35 @@ namespace ConsoleApp1
         {
             switch (input)
             {
+
+
                 case ConsoleKey.D1:
-                    Game.Load("MazeRoom1");
+                    if(Game.Player.Hp == Game.Player.Hp)
+                    {
+                        Random rand = new Random();
+                        int randNumber = rand.Next(30);
+                        if(randNumber == 0)
+                        {
+                            Game.Clear("환한 빛이 보인다..!");
+                        }
+                        else if(randNumber > 0)
+                        {
+                            Console.WriteLine("다음 방으로 진입했다.");
+                            Game.Load("MazeRoom1");
+                        }
+                        
+                    }
                     break;
                 case ConsoleKey.D2:
-                    Game.GameOver("당신은 벽사이에서 곤죽이 되었다...");
+                    Game.GameOver("당신은 곤죽이 되었다...");
                     break;
                 case ConsoleKey.D3:
-                    Console.WriteLine("당신은 벽이 더 좁아지기 전에 되돌아 갔지만 벽에 부딪혀 {0}데미지를 입었다.");
                     Game.Load("MazeRoom");
                     break;
+
+
+
+               
 
             }
         }
@@ -50,14 +69,18 @@ namespace ConsoleApp1
                 
                 case ConsoleKey.D1:
                     Console.WriteLine("앞만 보고 전력질주했다.");
-                    if (Game.Player.Speed >= 8)
+                    Random rand = new Random();
+                    int randNumber = rand.Next(20);
+                    if (randNumber <= Game.Player.Speed)
                     {
-                        Console.WriteLine("당신은 벽이 좁아지는 속도보다 빠르게 달려 다음방으로 진입했다.");
+                        Console.WriteLine();
+                        Console.WriteLine("당신은 벽이 좁아지는 속도보다 빠르게 달려 좁아지는 벽 틈에서 나왔다.");
                     }
                     else
                     {
+                        Console.WriteLine();
                         Console.WriteLine("당신은 미처 벽에서 탈출하지 못하였다.");
-                        Game.GameOver("당신은 벽사이에서 곤죽이 되었다...");
+                        Game.Player.Hp = 0;
                     }
                     break;
                 case ConsoleKey.D2:
@@ -65,6 +88,10 @@ namespace ConsoleApp1
                     break;
                 case ConsoleKey.D3:
                     Console.WriteLine("벽이 좁아 지는걸 보고 뒤로 빠르게 뛰었다.");
+                    Random rand2 = new Random();
+                    int randNumber2 = rand2.Next(5);
+                    Console.WriteLine("당신은 원래방으로 빠르게 되돌아 갔지만 발을 헛 디뎌 {0}데미지를 입었다...",randNumber2);
+                    Game.Player.Hp -= randNumber2;
                     break;
 
             }
@@ -77,22 +104,10 @@ namespace ConsoleApp1
 
         public override void Wait()
         {
-
-            switch (input)
-            {
-                case ConsoleKey.D1:
-                    Console.WriteLine("계속...");
-                    Console.ReadKey();
-                    break;
-                case ConsoleKey.D2:
-                    Console.WriteLine("당신은 좁아지는 벽에 끼여 짓뭉개졌다...");
-                    Console.ReadKey();
-                    break;
-                case ConsoleKey.D3:
-                    Console.WriteLine("당신은 벽이 더 좁아지기 전에 되돌아갔다.");
-                    Console.ReadKey();
-                    break;
-            }
+            Console.WriteLine("계속...");
+            Console.ReadKey();
+           
+           
         }
     }
 }
