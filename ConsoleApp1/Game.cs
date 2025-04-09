@@ -29,6 +29,7 @@ namespace ConsoleApp1
             roomDic.Add("MazeRoom", new MazeRoom());
             roomDic.Add("MazeRoom1", new MazeRoom1());
             roomDic.Add("BoxRoom", new BoxRoom());
+            roomDic.Add("ClosedRoom", new ClosedRoom());
             roomDic.Add("SpeedTrap", new SpeedTrapRoom());
             roomDic.Add("PowerTrap", new PowerTrapRoom());
             roomDic.Add("PuzzleTrap", new PuzzleTrapRoom());

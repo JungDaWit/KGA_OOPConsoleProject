@@ -26,7 +26,7 @@ namespace ConsoleApp1
                     Console.WriteLine("당신은 좁아지는 벽에 끼여 짓뭉개졌다...");
                     break;
                 case ConsoleKey.D3:
-                    Console.WriteLine("당신은 벽이 더 좁아지기 전에 되돌아갔다.");
+                    Console.WriteLine("당신은 벽이 더 좁아지기 전에 되돌아 갔지만 벽에 부딪혀 {0}데미지를 입었다.");
                     break;
 
             }

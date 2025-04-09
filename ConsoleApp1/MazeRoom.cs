@@ -21,6 +21,10 @@ namespace ConsoleApp1
             switch (input)
             {
                 case ConsoleKey.D1:
+                    Game.Load("ClosedRoom");
+                    break;
+
+                case ConsoleKey.D3:
                     Random rand = new Random();
                     int randomNumber = rand.Next(4);
                     if (randomNumber == 0)
@@ -34,6 +38,7 @@ namespace ConsoleApp1
                     else
                         Game.Load("PuzzleTrap");
                     break;
+
                 case ConsoleKey.D2:
                     Game.Load("BoxRoom");
                     break;
