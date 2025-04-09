@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    public class MazeRoom : Room
+    public class MazeRoom1 : Room
     {
-       
+
         public override void Choice()
         {
             Console.WriteLine("1. 앞으로 간다");
@@ -22,7 +22,7 @@ namespace ConsoleApp1
             {
                 case ConsoleKey.D1:
                     Random rand = new Random();
-                    int randomNumber = rand.Next(4);
+                    int randomNumber = rand.Next(0);
                     if (randomNumber == 0)
                     {
                         Game.Load("SpeedTrap");
@@ -35,7 +35,7 @@ namespace ConsoleApp1
                         Game.Load("PuzzleTrap");
                     break;
                 case ConsoleKey.D2:
-                    Game.Load("BoxRoom");
+                    Environment.Exit(0);
                     break;
 
             }
@@ -45,12 +45,11 @@ namespace ConsoleApp1
         {
             Console.Clear();
 
-            Console.WriteLine("당신은 낯선 곳에서 눈을 떴다...");
-            Console.WriteLine("하지만 당신이 누군지, 왜 여기 있는지 기억이 나지 않는다...");
+            Console.WriteLine("당신은 처음과 비슷해 보이는 방으로 왔다.");
             Console.WriteLine("당신 앞에 세 갈레 길이 있다... 어디로 갈까?");
             Console.WriteLine();
 
-           
+
         }
 
         public override void Result()
@@ -71,7 +70,7 @@ namespace ConsoleApp1
 
         public override void Update()
         {
-           
+
         }
 
         public override void Wait()

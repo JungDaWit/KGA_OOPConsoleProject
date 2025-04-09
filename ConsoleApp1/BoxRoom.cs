@@ -10,22 +10,57 @@ namespace ConsoleApp1
     {
         public override void Choice()
         {
-           
+            Console.WriteLine("1. 상자를 열어본다.");
+            Console.WriteLine("2. 상자를 열지 않고 이전 방으로 돌아간다.");
         }
 
         public override void Next()
         {
-           
+            Game.Load("MazeRoom");
+        
         }
 
         public override void Render()
         {
             Console.Clear();
+            Console.WriteLine("당신이 선택한 방향은 상자 하나만 있는 방이였다.");
+            Console.WriteLine("당신은 상자를 수상하게 생각했다...");
+
         }
 
         public override void Result()
         {
-           
+            switch (input)
+            {
+                case ConsoleKey.D1:
+                    Console.WriteLine("당신은 상자를 열어보았다");
+                    Random rand = new Random();
+                    int randNumber = rand.Next(8);
+                    if (randNumber == 0)
+                    {
+                        Console.WriteLine("상자 안에는 체력 포션을 흭득했다! 체력 {0} 업!");
+                    }
+                    else if (randNumber == 1)
+                    {
+                        Console.WriteLine("상자 안에는 힘 포션을 흭득했다! 힘 {0} 업!");
+                    }
+                    else if (randNumber == 2)
+                    {
+                        Console.WriteLine("상자 안에는 지력 포션을 흭득했다! 지력 {0} 업!");
+                    }
+                    else if (randNumber == 3)
+                    {
+                        Console.WriteLine("상자 안에는 속도 포션을 흭득했다! 속도 {0} 업!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("상자는 미믹이였다! 손을 물려 {0}데미지를 입었다...");
+                    }
+                    break;
+                case ConsoleKey.D2:
+                    Console.WriteLine("당신은 상자를 수상하게 생각해 뒤돌아서 원래 방으로 돌아갔다.");
+                    break;
+            }
         }
 
         public override void Update()
@@ -35,7 +70,8 @@ namespace ConsoleApp1
 
         public override void Wait()
         {
-           
+            Console.WriteLine("진행하려면 아무키나 눌러주세요...");
+            Console.ReadKey();
         }
     }
 }

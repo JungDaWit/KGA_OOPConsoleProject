@@ -27,6 +27,8 @@ namespace ConsoleApp1
             roomDic = new Dictionary<string, Room>();
             roomDic.Add("Title", new Title());
             roomDic.Add("MazeRoom", new MazeRoom());
+            roomDic.Add("MazeRoom1", new MazeRoom1());
+            roomDic.Add("BoxRoom", new BoxRoom());
             roomDic.Add("SpeedTrap", new SpeedTrapRoom());
             roomDic.Add("PowerTrap", new PowerTrapRoom());
             roomDic.Add("PuzzleTrap", new PuzzleTrapRoom());
@@ -56,6 +58,7 @@ namespace ConsoleApp1
                 Console.WriteLine();
                 nextRoom.Result();
                 Console.WriteLine();
+                nextRoom.Wait();
                 nextRoom.Next();
             }
             End();
