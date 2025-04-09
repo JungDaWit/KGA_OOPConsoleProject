@@ -38,7 +38,7 @@ namespace ConsoleApp1
                         Game.Load("PuzzleTrap");
                     break;
                 case ConsoleKey.D2:
-                    Environment.Exit(0);
+                    Game.Load("BoxRoom");
                     break;
 
             }
@@ -46,7 +46,7 @@ namespace ConsoleApp1
 
         public override void Render()
         {
-            Console.Clear();
+            Console.Clear(); // TODO : 1번 선택시 화면이 클리어 되지도 않고 랜더 출력도 안되는 문제 수정해야함
 
             Console.WriteLine("당신은 처음과 비슷해 보이는 방으로 왔다.");
             Console.WriteLine("당신 앞에 세 갈레 길이 있다... 어디로 갈까?");

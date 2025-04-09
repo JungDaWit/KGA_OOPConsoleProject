@@ -21,7 +21,7 @@ namespace ConsoleApp1
                 case ConsoleKey.D1:
                     if (Game.Player.Hp <= 0)
                     {
-                        Game.GameOver("당신은 미믹에게 뼈까지 씹혀버렸다...");
+                        Game.GameOver("당신은 미믹에게 뼈 까지 씹혀버렸다...");
                     }
                     else
                     {

@@ -33,7 +33,12 @@ namespace ConsoleApp1
                         else if (randNumber > 0)
                         {
                             Console.WriteLine("다음 방으로 진입했다.");
+                            Console.ReadKey();
                             Game.Load("MazeRoom1");
+                        }
+                        else if (Game.Player.Hp <= 0)
+                        {
+                            Game.GameOver("당신은 밧줄을 놓치고 끝없는 어둠속으로 추락했다...");
                         }
 
                     }
@@ -63,7 +68,7 @@ namespace ConsoleApp1
                    else if (Game.Player.Power > randNumber)
                    {
                        int randNumber2 = rand.Next(5);
-                       Console.WriteLine("당신은 밧줄을 재빠르게 붙잡고 올라갔지만 힘이 조금 부족해 {0}데미지를 입고 다음 방으로 이동했다.",randNumber2);
+                       Console.WriteLine("당신은 밧줄을 재빠르게 붙잡고 올라갔지만 힘이 조금 부족해 {0}데미지를 입었다.",randNumber2);
                        Game.Player.Hp -= randNumber2;
                    }
                     break;

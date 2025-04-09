@@ -43,7 +43,7 @@ namespace ConsoleApp1
         {
             Console.Clear();
             Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
-            Console.WriteLine("ㅁ       미로를 탈출했습니다!      ㅁ");
+            Console.WriteLine("ㅁ       미로를 탈출했습니다!       ㅁ");
             Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
             Console.WriteLine();
             Console.WriteLine("아무키 입력시 게임 타이틀로 이동 합니다.");
