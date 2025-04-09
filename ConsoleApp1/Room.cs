@@ -8,7 +8,7 @@ namespace ConsoleApp1
 {
     public abstract class Room
     {
-        
+       
         protected ConsoleKey input;
         public abstract void Render();
         public void Input()

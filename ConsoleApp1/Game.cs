@@ -15,6 +15,17 @@ namespace ConsoleApp1
         {
             nextRoom = roomDic[loadName];
         }
+        public static void GameOver(string reason)
+        {
+            Console.Clear();
+            Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
+            Console.WriteLine("ㅁ       당신은 사망했습니다...    ㅁ");
+            Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
+            Console.WriteLine();
+            Console.WriteLine(reason);
+
+            gameOver = true;
+        }
 
         
 

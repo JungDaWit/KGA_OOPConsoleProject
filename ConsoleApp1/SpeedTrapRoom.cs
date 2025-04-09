@@ -23,7 +23,7 @@ namespace ConsoleApp1
                     Game.Load("MazeRoom1");
                     break;
                 case ConsoleKey.D2:
-                    Console.WriteLine("당신은 좁아지는 벽에 끼여 짓뭉개졌다...");
+                    Game.GameOver("당신은 벽사이에서 곤죽이 되었다...");
                     break;
                 case ConsoleKey.D3:
                     Console.WriteLine("당신은 벽이 더 좁아지기 전에 되돌아 갔지만 벽에 부딪혀 {0}데미지를 입었다.");
