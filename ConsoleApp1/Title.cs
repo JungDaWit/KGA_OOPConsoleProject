@@ -19,7 +19,7 @@ namespace ConsoleApp1
             switch (input)
             {
                 case ConsoleKey.D1:
-                    Game.Load("MazeRoom");
+                    Game.Load("intro");
                     break;
                 case ConsoleKey.D2:
                     Environment.Exit(0);

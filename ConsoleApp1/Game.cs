@@ -69,6 +69,7 @@ namespace ConsoleApp1
             gameOver = false;
 
             roomDic = new Dictionary<string, Room>();
+            roomDic.Add("intro", new intro());
             roomDic.Add("Title", new Title());
             roomDic.Add("MazeRoom", new MazeRoom());
             roomDic.Add("MazeRoom1", new MazeRoom1());
