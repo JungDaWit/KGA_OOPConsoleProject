@@ -22,26 +22,27 @@ namespace ConsoleApp1
 
 
                 case ConsoleKey.D1:
-                    if (Game.Player.Hp == Game.Player.Hp)
-                    {
+                   
                         Random rand = new Random();
                         int randNumber = rand.Next(30);
-                        if (randNumber == 0)
+                        if (randNumber == 1)
                         {
                             Game.Clear("환한 빛이 보인다..!");
                         }
-                        else if (randNumber > 0)
+                        else if (Game.Player.Power >= randNumber)
                         {
-                            Console.WriteLine("다음 방으로 진입했다.");
+                            Console.WriteLine("당신은 밧줄을 잡고 올라가 다음방으로 진입했다.");
                             Console.ReadKey();
                             Game.Load("MazeRoom1");
                         }
-                        else if (Game.Player.Hp <= 0)
+                        else if (Game.Player.Power < randNumber)
                         {
+                            Console.WriteLine("당신은 팔은 힘이 빠지고 있다...");
+                            Console.ReadKey();
                             Game.GameOver("당신은 밧줄을 놓치고 끝없는 어둠속으로 추락했다...");
                         }
 
-                    }
+                    
                     break;
             }
         }
@@ -59,18 +60,7 @@ namespace ConsoleApp1
             switch (input)
             {
                 case ConsoleKey.D1:
-                   Random rand = new Random();
-                   int randNumber = rand.Next(20);
-                   if (Game.Player.Power <= randNumber)
-                   {
-                       Console.WriteLine("당신은 밧줄을 재빠르게 붙잡고 올라가 다음 방으로 이동했다.");
-                   }
-                   else if (Game.Player.Power > randNumber)
-                   {
-                       int randNumber2 = rand.Next(5);
-                       Console.WriteLine("당신은 밧줄을 재빠르게 붙잡고 올라갔지만 힘이 조금 부족해 {0}데미지를 입었다.",randNumber2);
-                       Game.Player.Hp -= randNumber2;
-                   }
+                    Console.WriteLine("당신은 재빠르게 밧줄을 붙잡았다!");
                     break;
                 case ConsoleKey.D2:
                     Console.WriteLine("벽 틈에 손을 넣어봤지만 손이 미끄러져 그대로 추락하고 말았다.");

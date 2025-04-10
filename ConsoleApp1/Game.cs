@@ -33,7 +33,7 @@ namespace ConsoleApp1
             player.Power = 5;
             player.Intellect = 5;
             player.Speed = 5;
-            Game.Load("Title");
+            Load("Title");
            
         }
         public static void playerInfo()
@@ -56,8 +56,8 @@ namespace ConsoleApp1
             player.Power = 5;
             player.Intellect = 5;
             player.Speed = 5;
-           
-            Game.Load("Title");
+            Load("Title");
+
         }
 
         
@@ -69,8 +69,9 @@ namespace ConsoleApp1
             gameOver = false;
 
             roomDic = new Dictionary<string, Room>();
-            roomDic.Add("intro", new intro());
+           
             roomDic.Add("Title", new Title());
+            roomDic.Add("intro", new intro());
             roomDic.Add("MazeRoom", new MazeRoom());
             roomDic.Add("MazeRoom1", new MazeRoom1());
             roomDic.Add("BoxRoom", new BoxRoom());
