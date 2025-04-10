@@ -47,7 +47,9 @@ namespace ConsoleApp1
             Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
             Console.WriteLine();
             Console.WriteLine("아무키 입력시 게임 타이틀로 이동 합니다.");
-            //Console.ReadLine(Game.Load("Title"));
+
+            Console.ReadKey();
+            Game.Load("Title");
         }
 
         

@@ -28,6 +28,10 @@ namespace ConsoleApp1
                         Game.Load("MazeRoom");
                     }
                     break;
+                case ConsoleKey.D2:
+                    Game.Load("MazeRoom");
+                    break;
+
             }
         }
 
