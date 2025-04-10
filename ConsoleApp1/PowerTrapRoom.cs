@@ -74,10 +74,12 @@ namespace ConsoleApp1
                     break;
                 case ConsoleKey.D2:
                     Console.WriteLine("벽 틈에 손을 넣어봤지만 손이 미끄러져 그대로 추락하고 말았다.");
+                    Console.ReadKey();
                     Game.GameOver("당신은 끝없는 어둠속으로 추락했다...");
                     break;
                 case ConsoleKey.D3:
                     Console.WriteLine("당신은 아무것도 잡지 않았다...");
+                    Console.ReadKey();
                     Game.GameOver("당신은 끝없는 어둠속으로 추락했다...");
                     break;
 

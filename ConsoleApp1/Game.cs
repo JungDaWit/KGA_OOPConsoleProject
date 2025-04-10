@@ -29,6 +29,10 @@ namespace ConsoleApp1
 
             Console.WriteLine("타이틀로 돌아가려면 아무키나 누르세요");
             Console.ReadKey();
+            player.Hp = 10;
+            player.Power = 5;
+            player.Intellect = 5;
+            player.Speed = 5;
             Game.Load("Title");
            
         }
@@ -47,8 +51,12 @@ namespace ConsoleApp1
             Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
             Console.WriteLine();
             Console.WriteLine("아무키 입력시 게임 타이틀로 이동 합니다.");
-
             Console.ReadKey();
+            player.Hp = 10;
+            player.Power = 5;
+            player.Intellect = 5;
+            player.Speed = 5;
+           
             Game.Load("Title");
         }
 
