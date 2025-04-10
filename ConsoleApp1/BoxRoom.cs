@@ -50,7 +50,7 @@ namespace ConsoleApp1
                 case ConsoleKey.D1:
                     Console.WriteLine("당신은 상자를 열어보았다");
                     Random rand = new Random();
-                    int randNumber = rand.Next(8);
+                    int randNumber = rand.Next(6);
                     int randNumber2 = rand.Next(5);
                     if (randNumber == 0)
                     {
