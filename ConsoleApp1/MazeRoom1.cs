@@ -60,13 +60,13 @@ namespace ConsoleApp1
             switch (input)
             {
                 case ConsoleKey.D1:
-                    Console.WriteLine("당신은 앞으로 이동했다.");
+                    Util.Print("당신은 앞으로 이동했다.", ConsoleColor.Yellow);
                     break;
                 case ConsoleKey.D2:
-                    Console.WriteLine("당신은 왼쪽 길로 이동했다.");
+                    Util.Print("당신은 왼쪽 길로 이동했다.", ConsoleColor.Green);
                     break;
                 case ConsoleKey.D3:
-                    Console.WriteLine("당신은 오른쪽 길로 이동했다.");
+                    Util.Print("당신은 오른쪽 길로 이동했다.", ConsoleColor.Red);
                     break;
             }
         }

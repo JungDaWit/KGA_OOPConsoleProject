@@ -21,11 +21,11 @@ namespace ConsoleApp1
         public override void Render()
         {
             Console.Clear();
-            Console.WriteLine("당신은 낯선 곳에서 눈을 떴다...");
-            Console.WriteLine("하지만 당신이 누군지, 왜 여기 있는지 기억이 나지 않는다...");
-            Console.WriteLine("일단 여기서 나가기 위해 주위를 둘러보았다.");
+            Util.Print("당신은 낯선 곳에서 눈을 떴다...",ConsoleColor.White , 1000);
+            Util.Print("하지만 당신이 누군지, 왜 여기 있는지 기억이 나지 않는다...", ConsoleColor.White, 1000);
+            Util.Print("일단 여기서 나가기 위해 주위를 둘러보았다.", ConsoleColor.White, 2000);
             Console.WriteLine();
-            Console.WriteLine("눈앞에는 세 갈레 길이 보였고 선택해서 나아가면 될 거 같다.");
+            Util.Print("눈앞에는 세 갈레 길이 보였고 선택해서 나아가면 될 거 같다.", ConsoleColor.White, 1000);
         }
 
         public override void Result()
@@ -40,7 +40,7 @@ namespace ConsoleApp1
 
         public override void Wait()
         {
-            Console.WriteLine("계속...");
+            Util.Print("계속...", ConsoleColor.White, 1000);
             Console.ReadKey();
         }
     }

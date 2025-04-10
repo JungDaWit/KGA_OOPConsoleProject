@@ -29,14 +29,14 @@ namespace ConsoleApp1
                     }
                     else if (Game.Player.Power == randNumber )
                     {
-                        Console.WriteLine("환한 빛이 보인다..!");
+                        Util.Print("환한 빛이 보인다..!",ConsoleColor.Yellow);
                         Console.ReadKey();
                         Game.Clear("당신은 이 미궁에서 탈출했다..!");
                     }
                     else if (Game.Player.Power < randNumber)
                     {
                         Console.WriteLine("힘이 부족해 문이 밀리지 않는다...");
-                        Console.WriteLine("문을 밀려고 힘을 많이쓰자 체력이 떨어졌다...{0}데미지를 입고 원래 방으로 돌아 갔다.", 1);
+                        Util.Print($"문을 밀려고 힘을 많이쓰자 체력이 떨어졌다... 1데미지를 입고 원래 방으로 돌아 갔다.",ConsoleColor.Red);
                         Game.Player.Hp -= 1;
                         
                         Console.ReadKey();

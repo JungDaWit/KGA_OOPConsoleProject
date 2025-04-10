@@ -20,9 +20,9 @@ namespace ConsoleApp1
         public static void GameOver(string reason)
         {
             Console.Clear();
-            Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
-            Console.WriteLine("ㅁ       당신은 사망했습니다...    ㅁ");
-            Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
+            Util.Print("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ", ConsoleColor.Red);
+            Util.Print("ㅁ       당신은 사망했습니다...    ㅁ", ConsoleColor.Red);
+            Util.Print("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ", ConsoleColor.Red);
             Console.WriteLine();
             Console.WriteLine(reason);
             Console.WriteLine();
@@ -38,17 +38,17 @@ namespace ConsoleApp1
         }
         public static void playerInfo()
         {
-            Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
-            Console.WriteLine("ㅁ                당신의 현재 상태                ㅁ");
-            Console.WriteLine("ㅁ   체력 : {0},   힘 : {1},   지능 : {2},   속도 : {3}  ㅁ",player.Hp,player.Power,player.Intellect,player.Speed);
-            Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
+            Util.Print("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ",ConsoleColor.Green);
+            Util.Print("ㅁ                당신의 현재 상태                ㅁ", ConsoleColor.Green);
+            Util.Print($"ㅁ   체력 : {player.Hp},   힘 : {player.Power},   지능 : {player.Intellect},   속도 : {player.Speed}  ㅁ", ConsoleColor.Green);
+            Util.Print("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ", ConsoleColor.Green);
         }
         public static void Clear(string reason)
         {
             Console.Clear();
-            Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
-            Console.WriteLine("ㅁ       미로를 탈출했습니다!       ㅁ");
-            Console.WriteLine("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ");
+            Util.Print("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ",ConsoleColor.Yellow);
+            Util.Print("ㅁ       미로를 탈출했습니다!       ㅁ", ConsoleColor.Yellow);
+            Util.Print("ㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁㅁ", ConsoleColor.Yellow);
             Console.WriteLine();
             Console.WriteLine("아무키 입력시 게임 타이틀로 이동 합니다.");
             Console.ReadKey();

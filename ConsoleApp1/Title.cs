@@ -10,8 +10,8 @@ namespace ConsoleApp1
     {
         public override void Choice()
         {
-             Console.WriteLine("1. 게임 시작");
-            Console.WriteLine("2. 게임 종료");
+            Util.Print("1. 게임 시작",ConsoleColor.Green);
+            Util.Print("2. 게임 종료",ConsoleColor.Red);
         }
 
         public override void Next()

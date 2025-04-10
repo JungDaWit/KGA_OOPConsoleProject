@@ -54,27 +54,27 @@ namespace ConsoleApp1
                     int randNumber2 = rand.Next(5);
                     if (randNumber == 0)
                     {
-                        Console.WriteLine("상자 안에는 체력 포션을 흭득했다! 체력 {0} 업!",randNumber2);
+                        Util.Print($"상자 안에는 체력 포션을 흭득했다! 체력 {randNumber2} 업!",ConsoleColor.Green);
                         Game.Player.Hp += randNumber2;
                     }
                     else if (randNumber == 1)
                     {
-                        Console.WriteLine("상자 안에는 힘 포션을 흭득했다! 힘 {0} 업!", randNumber2);
+                        Util.Print($"상자 안에는 힘 포션을 흭득했다! 힘 {randNumber2} 업!",ConsoleColor.Cyan);
                         Game.Player.Power += randNumber2;
                     }
                     else if (randNumber == 2)
                     {
-                        Console.WriteLine("상자 안에는 지력 포션을 흭득했다! 지력 {0} 업!", randNumber2);
+                        Util.Print($"상자 안에는 지력 포션을 흭득했다! 지력 {randNumber2} 업!",ConsoleColor.Blue);
                         Game.Player.Intellect += randNumber2;
                     }
                     else if (randNumber == 3)
                     {
-                        Console.WriteLine("상자 안에는 속도 포션을 흭득했다! 속도 {0} 업!", randNumber2);
+                        Util.Print($"상자 안에는 속도 포션을 흭득했다! 속도 {randNumber2} 업!",ConsoleColor.Yellow);
                         Game.Player.Speed += randNumber2;
                     }
                     else
                     {
-                        Console.WriteLine("상자는 미믹이였다! 손을 물려 {0}데미지를 입었다...", randNumber2);
+                        Util.Print($"상자는 미믹이였다! 손을 물려 {randNumber2}데미지를 입었다...",ConsoleColor.Red);
                         Game.Player.Hp -= randNumber2;
                     }
                     break;

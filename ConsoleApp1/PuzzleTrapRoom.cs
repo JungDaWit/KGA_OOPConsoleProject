@@ -77,7 +77,7 @@ namespace ConsoleApp1
                 case ConsoleKey.D2:
                     Random rand2 = new Random();
                     int randNumber2 = rand2.Next(5);
-                    Console.WriteLine("당신은 원래방으로 빠르게 되돌아 갔지만 발을 헛 디뎌 {0}데미지를 입었다...", randNumber2);
+                    Util.Print($"당신은 원래방으로 빠르게 되돌아 갔지만 발을 헛 디뎌 {randNumber2}데미지를 입었다...",ConsoleColor.Red);
                     Game.Player.Hp -= randNumber2;
                     break;
                 case ConsoleKey.D3:
