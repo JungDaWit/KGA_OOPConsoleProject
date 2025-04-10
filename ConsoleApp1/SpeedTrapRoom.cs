@@ -22,21 +22,26 @@ namespace ConsoleApp1
 
 
                 case ConsoleKey.D1:
-                    if(Game.Player.Hp == Game.Player.Hp)
-                    {
                         Random rand = new Random();
                         int randNumber = rand.Next(30);
                         if(randNumber == 0)
                         {
+                            Console.WriteLine("당신은 벽이 좁아지는 속도보다 빠르게 달려 좁아지는 벽 틈에서 나왔다.");
+                            Console.ReadKey();
                             Game.Clear("환한 빛이 보인다..!");
                         }
-                        else if(randNumber > 0)
+                        else if(Game.Player.Speed >= randNumber)
                         {
-                            Console.WriteLine("다음 방으로 진입했다.");
+                            Console.WriteLine("당신은 벽이 좁아지는 속도보다 빠르게 달려 좁아지는 벽 틈에서 나왔다.");
+                            Console.ReadKey();
                             Game.Load("MazeRoom1");
                         }
-                        
-                    }
+                        else if(Game.Player.Speed < randNumber)
+                        {
+                            Console.WriteLine("당신은 미처 벽에서 탈출하지 못하였다.");
+                            Console.ReadKey();
+                            Game.GameOver("당신은 곤죽이 되었다...");
+                        }
                     break;
                 case ConsoleKey.D2:
                     Game.GameOver("당신은 곤죽이 되었다...");
@@ -75,21 +80,7 @@ namespace ConsoleApp1
             {
                 
                 case ConsoleKey.D1:
-                    Console.WriteLine("앞만 보고 전력질주했다.");
-                    Random rand = new Random();
-                    int randNumber = rand.Next(20);
-                    if (randNumber <= Game.Player.Speed)
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("당신은 벽이 좁아지는 속도보다 빠르게 달려 좁아지는 벽 틈에서 나왔다.");
-                    }
-                    else
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("당신은 미처 벽에서 탈출하지 못하였다.");
-                        Console.ReadKey();
-                        Game.GameOver("당신은 곤죽이 되었다...");
-                    }
+                    Console.WriteLine("당신은 앞만 보고 전력질주했다.");
                     break;
                 case ConsoleKey.D2:
                     Console.WriteLine("함정이 발동되자 당신은 다리에 힘이 풀려버렸다.");

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,9 +25,11 @@ namespace ConsoleApp1
                 case ConsoleKey.D1:
                    
                         Random rand = new Random();
-                        int randNumber = rand.Next(30);
+                        int randNumber = rand.Next(20);
                         if (randNumber == 1)
                         {
+                            Console.WriteLine("당신은 밧줄을 잡고 올라가 다음방으로 진입했다.");
+                            Console.ReadKey();
                             Game.Clear("환한 빛이 보인다..!");
                         }
                         else if (Game.Player.Power >= randNumber)
@@ -41,8 +44,12 @@ namespace ConsoleApp1
                             Console.ReadKey();
                             Game.GameOver("당신은 밧줄을 놓치고 끝없는 어둠속으로 추락했다...");
                         }
-
-                    
+                    break;
+                case ConsoleKey.D2:
+                    Game.GameOver("당신은 끝없는 어둠속으로 추락했다...");
+                    break;
+                case ConsoleKey.D3:
+                    Game.GameOver("당신은 끝없는 어둠속으로 추락했다...");
                     break;
             }
         }
@@ -64,13 +71,9 @@ namespace ConsoleApp1
                     break;
                 case ConsoleKey.D2:
                     Console.WriteLine("벽 틈에 손을 넣어봤지만 손이 미끄러져 그대로 추락하고 말았다.");
-                    Console.ReadKey();
-                    Game.GameOver("당신은 끝없는 어둠속으로 추락했다...");
                     break;
                 case ConsoleKey.D3:
                     Console.WriteLine("당신은 아무것도 잡지 않았다...");
-                    Console.ReadKey();
-                    Game.GameOver("당신은 끝없는 어둠속으로 추락했다...");
                     break;
 
             }

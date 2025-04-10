@@ -24,16 +24,26 @@ namespace ConsoleApp1
                     if (Game.Player.Hp == Game.Player.Hp)
                     {
                         Random rand = new Random();
-                        int randNumber = rand.Next(30);
-                        if (randNumber == 0)
+                        int randNumber = rand.Next(20);
+                        if (randNumber == 1)
                         {
+                            Console.WriteLine("당신은 시간내에 퍼즐을 풀어내어 다음 방으로 진입했다.");
+                            Console.ReadKey();
                             Game.Clear("환한 빛이 보인다..!");
                         }
-                        else if (randNumber > 0)
+                        else if (Game.Player.Intellect >= randNumber)
                         {
-                            Console.WriteLine("다음 방으로 진입했다.");
+                            Console.WriteLine("당신은 시간내에 퍼즐을 풀어내어 다음 방으로 진입했다.");
+                            Console.ReadKey();
                             Game.Load("MazeRoom1");
                         }
+                        else if(Game.Player.Intellect < randNumber)
+                        {
+                            Console.WriteLine("당신은 퍼즐을 시간내에 풀지 못하였다...");
+                            Console.ReadKey();
+                            Game.GameOver("당신의 몸에는 수많은 구멍이 생겼다...");
+                        }
+
 
                     }
                     break;
@@ -46,6 +56,9 @@ namespace ConsoleApp1
                     {
                         Game.Load("MazeRoom1");
                     }
+                    break;
+                case ConsoleKey.D3:
+                    Game.GameOver("당신의 몸에는 수많은 구멍이 생겼다...");
                     break;
             }
         }
@@ -63,16 +76,7 @@ namespace ConsoleApp1
             switch (input)
             {
                 case ConsoleKey.D1:
-                    Random rand = new Random();
-                    int randNumber = rand.Next(20);
-                    if (randNumber <= Game.Player.Intellect)
-                    {
-                        Console.WriteLine("당신은 시간내에 퍼즐을 풀어내 다음방으로 이동했다.");
-                    }
-                    else
-                    Console.WriteLine("당신은 시간내에 퍼즐을 풀어내지 못하고 방에서 수많은 가시가 튀어 나와 당신을 찔렀다...");
-                    Console.ReadKey();
-                    Game.GameOver("당신의 몸에는 수많은 구멍이 생겼다...");
+                    Console.WriteLine("당신은 집중해서 퍼즐을 풀어나갔다.");
                     break;
                 case ConsoleKey.D2:
                     Random rand2 = new Random();
@@ -82,8 +86,6 @@ namespace ConsoleApp1
                     break;
                 case ConsoleKey.D3:
                     Console.WriteLine("당신은 머리가 새하얗게 변하며 멍 때려 버렸다...");
-                    Console.ReadKey();
-                    Game.GameOver("당신의 몸에는 수많은 구멍이 생겼다...");
                     break;
 
             }
