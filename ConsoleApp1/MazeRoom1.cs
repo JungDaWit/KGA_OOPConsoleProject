@@ -21,7 +21,7 @@ namespace ConsoleApp1
             switch (input)
             {
                 case ConsoleKey.D1:
-                    Game.Load("ClosedRoom");
+                    Game.Load("DoorRoom");
                     break;
                 case ConsoleKey.D3:
                     Random rand = new Random();

@@ -32,7 +32,7 @@ namespace ConsoleApp1
 
         public override void Render()
         {
-            Console.Clear();
+            //Console.Clear();
 
             Random rand = new Random();
             int randNumber = rand.Next(3);
